@@ -1,0 +1,526 @@
+trace("gene_expr_simulation", signature="network", browser, exit=browser)
+untrace("gene_expr_simulation", signature="network")
+trace("inference", signature="micro_array", browser, exit=browser, where = asNamespace("Patterns"))
+trace("predict", signature="micro_array,network", browser, exit=browser, where = asNamespace("Patterns"))
+trace("predict", signature="micro_array", browser, exit=browser, where = asNamespace("Patterns"))
+trace("predict", signature="ANY,network", browser, exit=browser, where = asNamespace("Patterns"))
+trace("predict", signature="ANY", browser, exit=browser, where = asNamespace("Patterns"))
+trace("predict", signature="ANY,ANY", browser, exit=browser, where = asNamespace("Patterns"))
+
+trace("plot", signature="network", browser, exit=browser, where = asNamespace("Patterns"))
+
+
+Authors@R: c(
+  person(given = "Frederic", family= "Bertrand", role = c("cre", "aut", "res"), email = "frederic.bertrand@utt.fr", comment = c(ORCID = "0000-0002-0837-8281")),
+  person(given = "Myriam", family= "Maumy", role = c("aut", "res"), email = "myriam.maumy@utt.fr", comment = c(ORCID = "0000-0002-4615-1512")))
+Author: Frederic Bertrand [cre, aut, res] (<https://orcid.org/0000-0002-0837-8281>), Myriam Maumy-Bertrand [aut, res] (<https://orcid.org/0000-0002-4615-1512>)
+Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
+  
+  
+  
+  
+library(rhub)
+check_for_cran()
+check_for_cran(check_args = "--as-cran",
+               env_vars = c("_R_CHECK_CRAN_INCOMING_USE_ASPELL_" = "false"))
+rhub::check(check_args = "--as-cran", platforms=c("debian-gcc-devel","debian-clang-devel","linux-x86_64-rocker-gcc-san","ubuntu-gcc-devel","ubuntu-rchk","windows-x86_64-devel"))
+
+
+
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/plsRglm
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/plsRglm
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest plsRglm_1.2.3.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran /media/psf/Home/Documents/GitHub/plsRglm_1.5.0.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/plsRcox
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/plsRcox
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest plsRcox_1.7.3.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran /media/psf/Home/Documents/GitHub/plsRcox_1.7.6.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/plsRbeta
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/plsRbeta
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/plsRbeta_0.2.6.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran --run-donttest  /media/psf/Home/Documents/GitHub/plsRbeta_0.3.0.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/SelectBoost
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/SelectBoost
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/SelectBoost_1.0.0.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true  bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/SelectBoost_2.2.0.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/Cascade
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/Cascade
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/Cascade_1.6.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/Cascade_2.1.tar.gz
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/CascadeData
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/CascadeData
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/CascadeData_1.1.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true  bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/CascadeData_1.3.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/BioStatR
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/BioStatR
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/BioStatR_3.1.0.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/BioStatR_3.1.0.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/plsdof
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/plsdof
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/plsdof_0.2.9.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/plsdof_0.2.9.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/randABC
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/randABC
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/randABC_0.0-1.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/networkABC_0.8-1.tar.gz
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/Patterns
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/Patterns
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/Patterns_0.4.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/Patterns_1.3.tar.gz
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/ModStatR
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/ModStatR
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/ModStatR_1.3.1.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/ModStatR_1.1.1.tar.gz
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/peperr
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/peperr
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/peperr_1.3.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/peperr_1.4.tar.gz
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/c060
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/c060
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/c060_0.2-7.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/c060_0.2-7.tar.gz
+
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/tetration
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/tetration
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/tetration_1.0.0.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/tetration_1.0.0.tar.gz
+
+
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/sageR
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/sageR
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/sageR_0.6.0.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/sageR_0.6.0.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/sageR_0.6.0.tar.gz")
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/SEGR
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/SEGR
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/bigalgebra_1.1.0.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/bigalgebra_1.1.1.tar.gz
+"C:\Program Files\R\R-devel\bin\R.exe" CMD check --as-cran  \\Mac\Home\Documents\GitHub\bigalgebra_1.1.1.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/bigalgebra_1.1.1.tar.gz")
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/bootPLS
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/bootPLS
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/bootPLS_1.0.0.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/bootPLS_1.0.0.tar.gz
+"C:\Program Files\R\R-devel\bin\R.exe" CMD check --as-cran  \\Mac\Home\Documents\GitHub\bootPLS_1.0.0.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/bootPLS_1.0.0.tar.gz")
+
+
+#mlegp
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/penalizedSVM
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/penalizedSVM
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/penalizedSVM_1.1.3.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/penalizedSVM_3.1.9.tar.gz
+"C:\Program Files\R\R-devel\bin\R.exe" CMD check --as-cran  \\Mac\Home\Documents\GitHub\penalizedSVM_1.1.3.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/penalizedSVM_1.1.3.tar.gz")
+
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/survAUC
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/survAUC
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/survAUC_1.1-1.tar.gz
+env ASAN_OPTIONS alloc_dealloc_mismatch=0:detect_leaks=0:detect_odr_violation=0 _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/survAUC_1.1-1.tar.gz
+"C:\Program Files\R\R-devel\bin\R.exe" CMD check --as-cran  \\Mac\Home\Documents\GitHub\survAUC_1.1-1.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/survAUC_1.1-1.tar.gz")
+
+
+LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/9/libasan.so env ASAN_OPTIONS='alloc_dealloc_mismatch=0:detect_leaks=0:detect_odr_violation=0' _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true _R_REALLY_FORCE_SYMBOLS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/survAUC_1.1-1.tar.gz
+
+
+tools:::.BioC_version_associated_with_R_version()
+setRepositories()
+install.packages("ProteoMM")
+
+
+LD_PRELOAD=/usr/lib/gcc/x86_64-linux-gnu/9/libasan.so env ASAN_OPTIONS='alloc_dealloc_mismatch=0:detect_leaks=0:detect_odr_violation=0' _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/mariechion/mi4p_1.0.tar.gz
+
+
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/penalizedSVM
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/penalizedSVM
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/penalizedSVM_1.1.3.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/penalizedSVM_3.1.9.tar.gz
+"C:\Program Files\R\R-devel\bin\R.exe" CMD check --as-cran  \\Mac\Home\Documents\GitHub\penalizedSVM_1.1.3.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/penalizedSVM_1.1.3.tar.gz")
+
+
+
+
+
+
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/penalizedSVM
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/penalizedSVM
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/granova_2.2.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/granova_2.2.tar.gz
+"C:\Program Files\R\R-devel\bin\R.exe" CMD check --as-cran  \\Mac\Home\Documents\GitHub\granova_2.2.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/granova_2.2.tar.gz")
+
+
+
+
+#bash R-devel CMD build --no-build-vignettes /media/psf/Home/Documents/GitHub/OneTwoSamples
+#bash R-devel CMD build /media/psf/Home/Documents/GitHub/OneTwoSamples
+#env R_KEEP_PKG_SOURCE=true _R_CHECK_LENGTH_1_CONDITION_=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true bash R-devel CMD check --as-cran --run-donttest /media/psf/Home/Documents/GitHub/OneTwoSamples_1.1-1.tar.gz
+env _R_KEEP_PKG_SOURCE=true _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true _R_CHECK_LENGTH_1_CONDITION_=true _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true _R_CHECK_CRAN_INCOMING_REMOTE_=true _R_CHECK_CRAN_INCOMING_=true _R_CHECK_FORCE_SUGGESTS_=true bash R-devel CMD check --as-cran  /media/psf/Home/Documents/GitHub/OneTwoSamples_1.1-1.tar.gz
+"C:\Program Files\R\R-devel\bin\R.exe" CMD check --as-cran  \\Mac\Home\Documents\GitHub\OneTwoSamples_1.1-1.tar.gz
+library(rcmdcheck)
+rcmdcheck("//Mac/Home/Documents/GitHub/OneTwoSamples_1.1-1.tar.gz")
+
+
+
+
+
+
+
+
+devtools::clean_dll()
+#then reinstall
+
+bash R-devel CMD build ~/networkABC
+bash R-devel CMD INSTALL ~/networkABC_0.0-1.tar.gz
+
+bash R-devel
+setwd("~/networkABC")
+devtools::clean_dll()
+devtools::load_all(".")
+#devtools::install(".")
+devtools::install(".", build_vignettes = TRUE)
+library(knitr)
+knit('README.Rmd')
+library(pkgdown)
+build_site(pkg = ".")
+
+# Puis load all
+
+
+use_github_actions()
+require(devtools)
+use_readme_rmd()
+use_news_md()
+use_cran_badge()
+use_github_links()
+
+
+
+devtools::document()
+devtools::build_readme(quiet = FALSE, run_pandoc=FALSE)
+library(pkgdown)
+build_site(devel = FALSE)
+build_site(devel = FALSE, lazy = TRUE)
+
+
+library(knitr)
+knit('README.Rmd')
+knit('index.Rmd','index.md')
+library(pkgdown)
+build_site()
+
+
+library(knitr)
+knit('README.Rmd')
+library(pkgdown)
+build_site(examples = FALSE, lazy = TRUE)
+build_home(quiet=FALSE)
+
+#Only rerun diffs
+library(knitr)
+knitr::knit('README.Rmd')
+library(pkgdown)
+pkgdown::build_site(lazy = TRUE)
+
+#Sys.setenv(LANG = "en")
+devtools::check(cran = TRUE, remote = TRUE, force_suggests = TRUE)
+devtools::check_built(path="~/Documents/GitHub/Patterns_1.4.tar.gz",cran = TRUE, remote = TRUE, force_suggests = TRUE)
+
+devtools::check(cran = TRUE, remote = TRUE, force_suggests = TRUE, vignettes=FALSE)
+
+pkg_path <- "~/Documents/GitHub/Cascade"
+pkg_path <- "~/Documents/GitHub/CascadeData"
+pkg_path <- "~/Documents/GitHub/BioStatR"
+pkg_path <- "~/Documents/GitHub/ModStatR"
+
+#rhub/fedora-gcc-devel
+#rhub/ubuntu-gcc-devel
+#rhub/debian-gcc-devel
+#rhub/debian-clang-devel
+#rhub/rocker-gcc-san
+
+rhub::local_check_linux(pkg_path, image = "rhub/fedora-gcc-devel", check_args = "--as-cran")
+#rhub::check_with_sanitizers()
+
+#?tools::resaveRdaFiles
+#tools::checkRdaFiles("/Users/fbertran/Documents/GitHub/ModStatR/data")
+#tools::resaveRdaFiles("/Users/fbertran/Documents/GitHub/ModStatR/data/data_event.RData")
+
+
+
+pkgdown::build_reference_index()
+
+
+library(knitr)
+knit('README.Rmd')
+library(pkgdown)
+pkgdown::build_site(lazy = TRUE, new_process = FALSE)
+pkgdown::build_site(lazy = TRUE)
+
+
+options(pkgdown.internet = FALSE)
+options(pkgdown.internet = TRUE)
+
+clean_site()
+#Note if names of generated files were changed, you will need to use
+#\link{clean_site} first to clean up orphan files.
+
+#to launch local build of vignettes
+launchctl setenv LOCAL "TRUE"
+LOCAL <- identical(Sys.getenv("LOCAL"), "TRUE")
+devtools::build_vignettes(dependencies = TRUE, quiet = FALSE, clean=FALSE)
+
+
+
+
+sudo apt-get install 
+
+# deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/
+
+
+http://singmann.org/installing-r-devel-on-linux/
+  
+# svn co https://svn.r-project.org/R/trunk r-devel/R
+
+svn checkout https://svn.r-project.org/R/trunk/ R
+cd R
+tools/rsync-recommended
+
+sudo apt-get install texlive-base
+sudo apt-get install texinfo
+sudo apt-get install texlive-latex-base
+sudo apt-get install texlive-latex-extra
+sudo apt-get install texlive-fonts-extra
+sudo apt-get install texlive-fonts-recommended
+
+sudo apt-get install subversion ccache
+sudo apt-get install xorg-dev
+sudo apt-get install libcurl4-openssl-dev
+
+sudo apt-get install t1-xfree86-nonfree ttf-xfree86-nonfree ttf-xfree86-nonfree-syriac xfonts-75dpi xfonts-100dpi
+
+  
+the R-devel script can also be used to build or check your package:
+* 		bash R-devel CMD build your-package-directory
+* 		bash R-devel CMD check --as-cran your-package.tar.gz
+
+#Once all this is set up, the steps of updating your R-devel installation to the latest version only involves calling the scripts in the right order:		
+cd ~/svn/r-devel/R
+svn update
+
+sudo nano /usr/local/bin/build-R-devel
+
+
+## ~/bin/build-R-devel
+
+#!/bin/sh
+
+cd ~/svn/R-devel-build
+
+R_PAPERSIZE=letter                \
+R_BATCHSAVE="--no-save --no-restore"         \
+R_BROWSER=xdg-open                \
+PAGER=/usr/bin/pager                \
+PERL=/usr/bin/perl                \
+R_UNZIPCMD=/usr/bin/unzip            \
+R_ZIPCMD=/usr/bin/zip                \
+R_PRINTCMD=/usr/bin/lpr                \
+LIBnn=lib                    \
+AWK=/usr/bin/awk                                \
+CC="ccache gcc"                    \
+CFLAGS="-ggdb -pipe -std=gnu99 -Wall -pedantic" \
+CXX="ccache g++"                \
+CXXFLAGS="-ggdb -pipe -Wall -pedantic"         \
+FC="ccache gfortran"                   \
+F77="ccache gfortran"                \
+MAKE="make -j4"                    \
+../r-devel/R/configure                     \
+--prefix=/usr/local/lib/R-devel         \
+--enable-R-shlib                 \
+--with-blas                 \
+--with-cairo=yes \
+--with-tcltk=yes --with-tcl-config=/usr/lib/tclConfig.sh --with-tk-config=/usr/lib/tkConfig.sh \
+--with-lapack                 \
+--with-readline                 \
+--with-recommended-packages
+
+#CC="clang -O3"                                  \
+#CXX="clang++ -03"                \
+
+#make svnonly
+make 
+
+echo "*** Done -- now run 'make install'"
+
+make install
+
+echo "*** All Done -- start R-devel with 'bash R-devel'"
+
+# edit script add --with-cairo=yes
+# edit script add --with-tcltk=yes --with-tcl-config=/usr/lib/tclConfig.sh --with-tk-config=/usr/lib/tkConfig.sh
+
+
+cd ~/svn/r-devel/R
+svn update
+./tools/rsync-recommended
+sudo bash build-R-devel
+
+#After doing so, it is probably a good idea to update the packages:
+bash R-devel
+update.packages(ask=FALSE, checkBuilt = TRUE)
+
+sudo bash build-R-devel 
+
+
+sudo nano /usr/local/bin/R-devel
+
+
+# _R_KEEP_PKG_SOURCE=true
+# _R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_=true
+# _R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_=true
+# _R_CHECK_LENGTH_1_CONDITION_=true
+# _R_CHECK_CRAN_INCOMING_USE_ASPELL_=true
+# _R_CHECK_CRAN_INCOMING_REMOTE_=true
+# _R_CHECK_CRAN_INCOMING_=true
+# _R_CHECK_FORCE_SUGGESTS_=true
+# _R_CHECK_DONTTEST_EXAMPLES_=false
+
+
+devtools::check(pkg='/media/psf/Home/Documents/GitHub/Cascade',force_suggests=TRUE,cran=TRUE, remote = TRUE, incoming = TRUE)
+
+
+devtools::check(document = FALSE, args = c('--as-cran'),
+                force_suggests=TRUE,
+                cran=TRUE, 
+                remote = FALSE, 
+                incoming = FALSE,
+                env_vars=c(`_R_KEEP_PKG_SOURCE` = "TRUE",
+                           `_R_S3_METHOD_LOOKUP_BASEENV_AFTER_GLOBALENV_` = "TRUE",
+                           `_R_S3_METHOD_LOOKUP_USE_TOPENV_AS_DEFENV_` = "TRUE",
+                           `_R_CHECK_LENGTH_1_CONDITION_` = "TRUE",
+                           `_R_CHECK_DONTTEST_EXAMPLES_`="FALSE"#,
+                           #                           `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "TRUE",
+                           #                           `_R_CHECK_CRAN_INCOMING_REMOTE_` = "FALSE",
+                           #                           `_R_CHECK_CRAN_INCOMING_` = "FALSE",
+                           #                           `_R_CHECK_FORCE_SUGGESTS_` = "TRUE"
+                )
+)
+
+
+  
+knitr::knit2html('~/Documents/GitHub/BioStatR/demo/Chapitre1.R')  
+rmarkdown::render('~/Documents/GitHub/BioStatR/demo/Chapitre1.spin.Rmd', clean = FALSE, output_format = "html_document")   
+  
+rmarkdown::render('~/Documents/GitHub/BioStatR/demo/Chapitre1.R', clean = FALSE, output_format = "html_document")   
+  
+  
+  
+rmarkdown::render('~/Documents/GitHub/sageR/complements/Chap09Complements.Rmd', clean = FALSE, output_format = "word_document")  
+  
+
+lapply(list.files(include.dirs=FALSE, full.names=TRUE, no..=TRUE), 
+       tools::showNonASCIIfile)
+dang::checkPackageAsciiCode(dir = ".")
+tools:::.check_package_datasets(".")
+
+tools::showNonASCIIfile("../sageR/data/Total_Secteur.RData")
+tools::showNonASCIIfile("demo/Chapitre1.R")
+
+
+tools::showNonASCIIfile("demo/Chapitre1.R")
+tools::showNonASCIIfile("demo/Chapitre2.R")
+tools::showNonASCIIfile("demo/Chapitre3.R")
+tools::showNonASCIIfile("demo/Chapitre4.R")
+tools::showNonASCIIfile("demo/SolChapitre1.R")
+tools::showNonASCIIfile("demo/SolChapitre2.R")
+tools::showNonASCIIfile("demo/SolChapitre3.R")
+tools::showNonASCIIfile("demo/SolChapitre4.R")
+
+tools::showNonASCIIfile("vignettes/AllLinksExtVignettes.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap01.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap02.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap03.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap04.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap05.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap06.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap07.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap08.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap09.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap10.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap11.Rmd")
+tools::showNonASCIIfile("vignettes/CodeChap12.Rmd")
+
+
+requireNamespace("doParallel")
+if (.Platform$OS.type != "windows") {
+  workers=parallel::makeForkCluster(nnodes = ncores)
+}
+else {
+  workers=parallel::makePSOCKcluster(names = ncores)
+}
+registerDoParallel(workers)
+
+parallel::stopCluster(workers)
+
+
+
+
+
+library(tidyverse)
+library(stringr)
+library(stringi)
+simplify_name <- function(n)
+  ## Extract just the name, removing any quotes, and normalize accented characters 
+  stri_trans_general(str_trim(str_match(n,"^[\'\"]?([^\'\",(<]+).*<")[,2]),"latin-ascii")       
+pkglist <- tools::CRAN_package_db()
+pkglist <- tbl_df(pkglist[-40]) ## remove duplicate MD5sum column
+pkglist %>% 
+  select(Maintainer, Author, Package) %>% 
+  arrange(Maintainer) -> authors
+authors %>% 
+  transmute(Maint = simplify_name(Maintainer)) %>% 
+  group_by(Maint) %>% 
+  tally %>% arrange(desc(n)) -> topauthors
+as.data.frame(head(topauthors,50))
