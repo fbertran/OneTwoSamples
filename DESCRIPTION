@@ -2,7 +2,7 @@ Package: OneTwoSamples
 Type: Package
 Title: Deal with One and Two (Normal) Samples
 Version: 1.2-0
-Date: 2025-09-09
+Date: 2025-09-15
 Authors@R: c(
 	person(given = "Frederic", family= "Bertrand", role = c("cre"), email = "frederic.bertrand@lecnam.net", comment = c(ORCID = "0000-0002-0837-8281")),
 	person(given = "Ying-Ying", family= "Zhang (Robert)", role = c("aut")))
@@ -27,3 +27,5 @@ License: GPL (>= 2)
 LazyLoad: yes
 Encoding: UTF-8
 Config/testthat/edition: 3
+URL: https://github.com/fbertran/OneTwoSamples, https://fbertran.github.io/OneTwoSamples/
+BugReports: https://github.com/fbertran/OneTwoSamples/issues

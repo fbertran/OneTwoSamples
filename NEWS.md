@@ -3,6 +3,7 @@
     * maintainer email update
     * fixes to Rd files
     * added unit tests
+    * added package doi
 
 # 2023-03-29  Frederic Bertrand <frederic.bertrand@lecnam.net>
     * version 1.1-0

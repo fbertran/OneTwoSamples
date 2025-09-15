@@ -1,0 +1,113 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# OneTwoSamples
+
+<https://doi.org/10.32614/CRAN.package.OneTwoSamples>
+
+<!-- badges: start -->
+[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.OneTwoSamples-blue.svg)](https://doi.org/10.32614/CRAN.package.OneTwoSamples)
+[![CRAN status](https://www.r-pkg.org/badges/version/OneTwoSamples)](https://CRAN.R-project.org/package=OneTwoSamples)
+<!-- badges: end -->
+
+The goal of OneTwoSamples is to introduce an R function one_two_sample() which can deal with one and two (normal) samples, Ying-Ying Zhang, Yi Wei (2012) <doi:10.2991/asshm-13.2013.29>. 
+For one normal sample x, the function reports descriptive statistics, plot, interval estimation and test of hypothesis of x. For two normal samples x and y, the function reports descriptive statistics, plot, interval estimation and test of hypothesis of x and y, respectively. It also reports interval estimation and test of hypothesis of mu1-mu2 (the difference of the means of x and y) and sigma1^2 / sigma2^2 (the ratio of the variances of x and y), tests whether x and y are from the same population, finds the correlation coefficient of x and y if x and y have the same length.
+
+## Installation
+
+You can install the released version of OneTwoSamples from [CRAN](https://CRAN.R-project.org) with:
+
+```{r, eval = FALSE}
+install.packages("OneTwoSamples")
+```
+
+You can install the development version of OneTwoSamples from [github](https://github.com) with:
+
+```{r, eval = FALSE}
+devtools::install_github("fbertran/OneTwoSamples")
+```
+
+## Examples
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(OneTwoSamples)
+```
+
+## One sample
+```{r}
+x=rnorm(10, mean = 1, sd = 0.2); x
+```
+
+## one_sample(x, ...) == one_two_sample(x, ...)
+```{r}
+one_sample(x, mu = 1, sigma = 0.2, side = 1)
+one_two_sample(x, mu = 1, sigma = 0.2, side = 1)
+```
+
+```{r}
+one_sample(x, sigma = 0.2, side = 1)
+one_two_sample(x, sigma = 0.2, side = 1)
+```
+
+```{r}
+one_sample(x, mu = 1, side = 1)
+one_two_sample(x, mu = 1, side = 1)
+```
+
+```{r}
+one_sample(x)
+one_two_sample(x)
+```
+
+## Two samples
+```{r}
+set.seed(1)
+x=rnorm(10, mean = 1, sd = 0.2); x
+y=rnorm(20, mean = 2, sd = 0.3); y
+y2=rnorm(20, mean = 2, sd = 0.2); y2
+```
+
+## sigma1, sigma2 known; mu1, mu2 known
+```{r}
+one_two_sample(x, y, sigma = c(0.2, 0.3), mu = c(1, 2))
+```
+
+## sigma1 = sigma2 unknown; mu1, mu2 known
+```{r}
+one_two_sample(x, y2, var.equal = TRUE, mu = c(1, 2))
+```
+
+## sigma1 != sigma2 unknown; mu1, mu2 known
+```{r}
+one_two_sample(x, y, mu = c(1, 2))
+```
+
+## sigma1, sigma2 known; mu1, mu2 unknown
+```{r}
+one_two_sample(x, y, sigma = c(0.2, 0.3))
+```
+
+## sigma1 = sigma2 unknown; mu1, mu2 unknown
+```{r}
+one_two_sample(x, y2, var.equal = TRUE)
+```
+
+## sigma1 != sigma2 unknown; mu1, mu2 unknown
+```{r}
+one_two_sample(x, y)
+```
+
