@@ -13,7 +13,7 @@ bibentry(bibtype="Manual",
 	person(given = "Ying-Ying", family= "Zhang (Robert)")),
          year         = year,
          note         = vers,
-         url          = "https://www.github.com/fbertran/OneTwoSamples",
+         url          = "https://github.com/fbertran/OneTwoSamples",
          doi = doi,
          textVersion = 
            paste("Frédéric Bertrand and Ying-Ying Zhang (Robert) (",year ,"). ", 
