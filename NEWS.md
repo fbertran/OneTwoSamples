@@ -1,3 +1,7 @@
+# 2026-06-06  Frederic Bertrand <frederic.bertrand@lecnam.net>
+    * version 1.3-0
+    * removed tabu dependency from tabu as requested by CRAN
+
 # 2025-09-09  Frederic Bertrand <frederic.bertrand@lecnam.net>
     * version 1.2-0
     * maintainer email update

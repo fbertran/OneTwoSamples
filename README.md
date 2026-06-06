@@ -59,10 +59,10 @@ one_sample(x, mu = 1, sigma = 0.2, side = 1)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -96,10 +96,10 @@ one_two_sample(x, mu = 1, sigma = 0.2, side = 1)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -137,10 +137,10 @@ one_sample(x, sigma = 0.2, side = 1)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -174,10 +174,10 @@ one_two_sample(x, sigma = 0.2, side = 1)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -215,10 +215,10 @@ one_sample(x, mu = 1, side = 1)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -259,10 +259,10 @@ one_two_sample(x, mu = 1, side = 1)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -307,10 +307,10 @@ one_sample(x)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -351,10 +351,10 @@ one_two_sample(x)
 #>        0%       25%       50%       75%      100% 
 #> 0.7741274 0.8898350 1.0206065 1.1053632 1.3960800 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.6219526 0.2155283 0.5482993 -0.3821252
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.028691 0.04116675 0.2028959 1.020607 0.06416132 19.72369 0.3705008 10.95256 0.6219526
+#>          R1  Skewness   Kurtosis
+#> 1 0.2155283 0.5482993 -0.3821252
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -392,7 +392,7 @@ one_two_sample(x)
 #> 1 0.04116675  9 0.3705008 1.665084e-05
 ```
 
-## Two samples
+## Two samples 
 
 ``` r
 set.seed(1)
@@ -434,10 +434,10 @@ one_two_sample(x, y, sigma = c(0.2, 0.3), mu = c(1, 2))
 #>        0%       25%       50%       75%      100% 
 #> 0.8328743 0.8907625 1.0513151 1.1107387 1.3190562 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.4861819 0.2199761 0.3512426 -0.3169031
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516 0.4861819
+#>          R1  Skewness   Kurtosis
+#> 1 0.2199761 0.3512426 -0.3169031
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -472,10 +472,10 @@ one_two_sample(x, y, sigma = c(0.2, 0.3), mu = c(1, 2))
 #>       0%      25%      50%      75%     100% 
 #> 1.335590 1.929085 2.069661 2.237572 2.453534 
 #> data_outline of y
-#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS
-#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008
-#>          R        R1  Skewness  Kurtosis
-#> 1 1.117944 0.3084875 -1.003374 0.5258495
+#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS        R
+#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008 1.117944
+#>          R1  Skewness  Kurtosis
+#> 1 0.3084875 -1.003374 0.5258495
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -568,10 +568,10 @@ one_two_sample(x, y2, var.equal = TRUE, mu = c(1, 2))
 #>        0%       25%       50%       75%      100% 
 #> 0.8328743 0.8907625 1.0513151 1.1107387 1.3190562 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.4861819 0.2199761 0.3512426 -0.3169031
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516 0.4861819
+#>          R1  Skewness   Kurtosis
+#> 1 0.2199761 0.3512426 -0.3169031
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -613,10 +613,10 @@ one_two_sample(x, y2, var.equal = TRUE, mu = c(1, 2))
 #>       0%      25%      50%      75%     100% 
 #> 1.724588 1.942281 1.988688 2.142703 2.271736 
 #> data_outline of y
-#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS     USS
-#> 1 20 2.025487 0.01911437 0.1382547 1.988688 0.03091469 6.825753 0.363173 82.4151
-#>           R       R1   Skewness  Kurtosis
-#> 1 0.5471478 0.200422 -0.1631305 -0.298063
+#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS     USS         R
+#> 1 20 2.025487 0.01911437 0.1382547 1.988688 0.03091469 6.825753 0.363173 82.4151 0.5471478
+#>         R1   Skewness  Kurtosis
+#> 1 0.200422 -0.1631305 -0.298063
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -722,10 +722,10 @@ one_two_sample(x, y, mu = c(1, 2))
 #>        0%       25%       50%       75%      100% 
 #> 0.8328743 0.8907625 1.0513151 1.1107387 1.3190562 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.4861819 0.2199761 0.3512426 -0.3169031
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516 0.4861819
+#>          R1  Skewness   Kurtosis
+#> 1 0.2199761 0.3512426 -0.3169031
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -767,10 +767,10 @@ one_two_sample(x, y, mu = c(1, 2))
 #>       0%      25%      50%      75%     100% 
 #> 1.335590 1.929085 2.069661 2.237572 2.453534 
 #> data_outline of y
-#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS
-#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008
-#>          R        R1  Skewness  Kurtosis
-#> 1 1.117944 0.3084875 -1.003374 0.5258495
+#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS        R
+#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008 1.117944
+#>          R1  Skewness  Kurtosis
+#> 1 0.3084875 -1.003374 0.5258495
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -876,10 +876,10 @@ one_two_sample(x, y, sigma = c(0.2, 0.3))
 #>        0%       25%       50%       75%      100% 
 #> 0.8328743 0.8907625 1.0513151 1.1107387 1.3190562 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.4861819 0.2199761 0.3512426 -0.3169031
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516 0.4861819
+#>          R1  Skewness   Kurtosis
+#> 1 0.2199761 0.3512426 -0.3169031
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -914,10 +914,10 @@ one_two_sample(x, y, sigma = c(0.2, 0.3))
 #>       0%      25%      50%      75%     100% 
 #> 1.335590 1.929085 2.069661 2.237572 2.453534 
 #> data_outline of y
-#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS
-#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008
-#>          R        R1  Skewness  Kurtosis
-#> 1 1.117944 0.3084875 -1.003374 0.5258495
+#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS        R
+#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008 1.117944
+#>          R1  Skewness  Kurtosis
+#> 1 0.3084875 -1.003374 0.5258495
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -1017,10 +1017,10 @@ one_two_sample(x, y2, var.equal = TRUE)
 #>        0%       25%       50%       75%      100% 
 #> 0.8328743 0.8907625 1.0513151 1.1107387 1.3190562 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.4861819 0.2199761 0.3512426 -0.3169031
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516 0.4861819
+#>          R1  Skewness   Kurtosis
+#> 1 0.2199761 0.3512426 -0.3169031
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -1062,10 +1062,10 @@ one_two_sample(x, y2, var.equal = TRUE)
 #>       0%      25%      50%      75%     100% 
 #> 1.724588 1.942281 1.988688 2.142703 2.271736 
 #> data_outline of y
-#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS     USS
-#> 1 20 2.025487 0.01911437 0.1382547 1.988688 0.03091469 6.825753 0.363173 82.4151
-#>           R       R1   Skewness  Kurtosis
-#> 1 0.5471478 0.200422 -0.1631305 -0.298063
+#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS     USS         R
+#> 1 20 2.025487 0.01911437 0.1382547 1.988688 0.03091469 6.825753 0.363173 82.4151 0.5471478
+#>         R1   Skewness  Kurtosis
+#> 1 0.200422 -0.1631305 -0.298063
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -1178,10 +1178,10 @@ one_two_sample(x, y)
 #>        0%       25%       50%       75%      100% 
 #> 0.8328743 0.8907625 1.0513151 1.1107387 1.3190562 
 #> data_outline of x
-#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS
-#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516
-#>           R        R1  Skewness   Kurtosis
-#> 1 0.4861819 0.2199761 0.3512426 -0.3169031
+#>    N     Mean        Var   std_dev   Median   std_mean       CV       CSS      USS         R
+#> 1 10 1.026441 0.02437258 0.1561172 1.051315 0.04936859 15.20957 0.2193532 10.75516 0.4861819
+#>          R1  Skewness   Kurtosis
+#> 1 0.2199761 0.3512426 -0.3169031
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
@@ -1223,10 +1223,10 @@ one_two_sample(x, y)
 #>       0%      25%      50%      75%     100% 
 #> 1.335590 1.929085 2.069661 2.237572 2.453534 
 #> data_outline of y
-#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS
-#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008
-#>          R        R1  Skewness  Kurtosis
-#> 1 1.117944 0.3084875 -1.003374 0.5258495
+#>    N     Mean        Var   std_dev   Median   std_mean       CV      CSS      USS        R
+#> 1 20 2.017276 0.09116068 0.3019283 2.069661 0.06751321 14.96713 1.732053 83.12008 1.117944
+#>          R1  Skewness  Kurtosis
+#> 1 0.3084875 -1.003374 0.5258495
 #> 
 #> 	Shapiro-Wilk normality test
 #> 
